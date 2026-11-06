@@ -1,8 +1,9 @@
 #include "simulation/simulation.h"
 #include "particle/particle.h"
+#include "render/render.h"
 #include <raylib.h>
 
-void run_simulation(Particle *particles, size_t num_particles,
+void run_simulation(Particle *particles, Particle_Render_Obj *render_objs, size_t num_particles,
                     double time_step) {
 
   while (!WindowShouldClose()) {
@@ -15,7 +16,7 @@ void run_simulation(Particle *particles, size_t num_particles,
 
     ClearBackground(BLACK);
     for (size_t i = 0; i < num_particles; i++) {
-      Particle_draw(&particles[i]);
+      Particle_draw(&particles[i], &render_objs[i]);
     }
     EndDrawing();
   }
