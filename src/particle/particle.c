@@ -1,16 +1,19 @@
 #include "particle.h"
+#include "raylib.h"
 #include "vector/vec_math.h"
-#include "raylib.h" 
 
 // == CONSTRUCTOR AND SETTERS ==
 
-Particle Particle_create(const Vec2 initial_position_vector, const Vec2 initial_velocity_vector, const float initial_radius, const Color initial_color) {
+Particle Particle_create(const Vec2 initial_position_vector,
+                         const Vec2 initial_velocity_vector,
+                         const float initial_radius,
+                         const Color initial_color) {
 
   Particle particle = {
-    .position = initial_position_vector,
-    .velocity = initial_velocity_vector,
-    .radius = initial_radius,
-    .color = initial_color,
+      .position = initial_position_vector,
+      .velocity = initial_velocity_vector,
+      .radius = initial_radius,
+      .color = initial_color,
   };
 
   return particle;
@@ -21,7 +24,8 @@ void Particle_set_mass(Particle *particle, const double mass) {
   particle->mass = mass;
 }
 
-void Particle_set_coefficient_of_restitution(Particle *particle, const double coefficient_of_restitution) {
+void Particle_set_coefficient_of_restitution(
+    Particle *particle, const double coefficient_of_restitution) {
 
   particle->coefficient_of_restitution = coefficient_of_restitution;
 }
@@ -32,7 +36,7 @@ void Particle_set_radius(Particle *particle, const float new_radius) {
 }
 
 void Particle_set_color(Particle *particle, const Color new_color) {
-  
+
   particle->color = new_color;
 }
 
@@ -65,11 +69,13 @@ void Particle_clear_force(Particle *particle) {
 }
 
 void Particle_drift(Particle *particle, const double time_step) {
-  particle->position = Vec2_add(particle->position, Vec2_scale(particle->velocity, time_step));
+  particle->position =
+      Vec2_add(particle->position, Vec2_scale(particle->velocity, time_step));
 }
 
-void Particle_kick(Particle *particle, const Vec2 acceleration_vector, const double time_step) {
-  
-  particle->velocity = Vec2_add(particle->velocity, Vec2_scale(acceleration_vector, time_step));
-}
+void Particle_kick(Particle *particle, const Vec2 acceleration_vector,
+                   const double time_step) {
 
+  particle->velocity =
+      Vec2_add(particle->velocity, Vec2_scale(acceleration_vector, time_step));
+}
