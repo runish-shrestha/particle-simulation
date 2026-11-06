@@ -13,6 +13,16 @@
 
 #include "vector/vec.h"
 
+/**
+ * @brief computes the differnece of vectors $vector_1 - vector_2$
+ * 
+ * @param vector1       vector 1
+ * @param vector2       vector 2
+ *
+ * @return difference   vector difference vector1 - vector2 
+ */
+Vec2 Vec2_sub(Vec2 vector1, Vec2 vector2);
+
 /** 
  * @brief computes the square length of the Vec2 vector given by $\lVert a \rVert^2 = a_x^2+a_y^2$
  *
