@@ -1,4 +1,5 @@
 #include "vector/vec_math.h"
+#include <math.h>
 
 double Vec2_norm_squared(Vec2 a) {
   double vector_norm_squared = Vec2_dot(a, a);

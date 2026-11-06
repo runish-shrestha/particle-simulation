@@ -12,7 +12,6 @@
 #define VEC_MATH_H
 
 #include "vector/vec.h"
-#include <math.h>
 
 /** 
  * @brief computes the square length of the Vec2 vector given by $\lVert a \rVert^2 = a_x^2+a_y^2$

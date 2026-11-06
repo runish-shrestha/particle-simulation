@@ -1,19 +1,18 @@
 #include "particle.h"
-#include "raylib.h"
 #include "vector/vec_math.h"
 
 // == CONSTRUCTOR AND SETTERS ==
 
 Particle Particle_create(const Vec2 initial_position_vector,
                          const Vec2 initial_velocity_vector,
-                         const float initial_radius,
-                         const Color initial_color) {
+                         const float initial_radius) {
 
   Particle particle = {
       .position = initial_position_vector,
       .velocity = initial_velocity_vector,
+      .mass = 1,
+      .coefficient_of_restitution = 1,
       .radius = initial_radius,
-      .color = initial_color,
   };
 
   return particle;
@@ -33,11 +32,6 @@ void Particle_set_coefficient_of_restitution(
 void Particle_set_radius(Particle *particle, const float new_radius) {
 
   particle->radius = new_radius;
-}
-
-void Particle_set_color(Particle *particle, const Color new_color) {
-
-  particle->color = new_color;
 }
 
 // == PHYSICS MEASUREMENT

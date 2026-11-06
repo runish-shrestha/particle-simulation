@@ -1,6 +1,8 @@
 /**
  * @brief Rendering module which handles rendering for the particular simulator
 */
+#ifndef RENDER_H
+#define RENDER_H
 
 #include "particle/particle.h"
 #include "raylib.h"
@@ -25,3 +27,4 @@ Vector2 Vector2_cast(Vec2 vector);
 */
 void Particle_draw(const Particle *particle);
 
+#endif

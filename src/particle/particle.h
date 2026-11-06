@@ -4,13 +4,14 @@
  *
  * This module defines the basic workings of the particle. How they are defined and how they are manipulated.
  *
+ * This module _doesn't_ handle rendering of particles.
+ *
 */
 
 #ifndef PARTICLE_H 
 #define PARTICLE_H
 
 #include "vector/vec.h" 
-#include "raylib.h"
 #include <stdbool.h>
 
 /** 
@@ -21,7 +22,6 @@
  * @param mass                          a double which stores the mass of th particle
  * @param coefficient_of_restitution    a double which stores the coefficient of restitution
  * @param radius                        a float which stores the radius of the particle
- * @param color                         a raylib Color struct which stores color
  * 
  * @param force                         a Vec2 vector that stores the force on the particle.
 */
@@ -31,7 +31,6 @@ typedef struct {
   double mass;
   double coefficient_of_restitution;
   float radius;
-  Color color;
   Vec2 force;
 } Particle;
 
@@ -44,12 +43,11 @@ typedef struct {
  *
  * @param initial_position_vector           initial position vector
  * @param initial_velocity_vector           initial velocity vector
- * @param initial_color                     color of the particle
  * @param initial_radius                    radius of the particle
  *
  * @return particle                         particle struct with the given values
 */
-Particle Particle_create(Vec2 initial_position_vector, Vec2 initial_velocity_vector, float initial_radius, Color initial_color);
+Particle Particle_create(Vec2 initial_position_vector, Vec2 initial_velocity_vector, float initial_radius);
 
 /**
  * @brief Sets the particle's mass
@@ -74,14 +72,6 @@ void Particle_set_coefficient_of_restitution(Particle *particle, double coeffici
  * @param new_radius  new radius
 */
 void Particle_set_radius(Particle *particle, float new_radius);
-
-/**
- * @brief Changes the color of the particle
- *
- * @param particle    particle whose color is to be changed
- * @param new_color   new color
-*/
-void Particle_set_color(Particle *particle, Color new_color);
 
 // == PHYSICS MEASUREMENT
 

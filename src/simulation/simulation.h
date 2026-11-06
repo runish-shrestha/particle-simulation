@@ -2,6 +2,9 @@
  * Defines the particle simulation
  */
 
+#ifndef SIMULATION_H
+#define SIMULATION_H
+
 #include "particle/particle.h"
 #include "render/render.h"
 #include <stdlib.h>
@@ -15,3 +18,5 @@
  */
 void run_simulation(Particle *particles, size_t num_particles,
                     double time_step);
+
+#endif
