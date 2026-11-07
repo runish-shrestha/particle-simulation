@@ -3,7 +3,7 @@
 
 // == UTILITY ==
 
-Vector2 Vector2_cast(const Vec2 vector) {
+static Vector2 Vector2_cast(const Vec2 vector) {
 
   Vector2 vector_cast = {
       .x = (float)vector.x_coordinate,

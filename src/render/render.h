@@ -7,20 +7,6 @@
 #include "particle/particle.h"
 #include "raylib.h"
 
-// == UTILITY ==
-
-/**
- * @brief Cast a Vec2 vector to Vector2 for rendering
- *
- * _Warning_ Vector2 stores coordiantes in floats so this shouldn't be used for
- * computation!
- *
- * @param vector   Vec2 vector to be casted
- * @return vector_cast Vector2 vector cast from vector
- *
- */
-Vector2 Vector2_cast(Vec2 vector);
-
 // == PARTICLE RENDER OBJ ==
 
 /**
