@@ -1,4 +1,4 @@
-#include "particle.h"
+#include "particle/particle.h"
 #include "vector/vec_math.h"
 
 // == CONSTRUCTOR AND SETTERS ==
