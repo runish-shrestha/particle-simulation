@@ -91,7 +91,7 @@ double Particle_kinetic_energy(const Particle *particle);
  * 
  * @return momentum     the momentum possessed by the particle at the time of measurement
 */
-double Particle_momentum(const Particle *particle);
+Vec2 Particle_momentum(const Particle *particle);
 
 // == PHYSICS UPDATES ==
 

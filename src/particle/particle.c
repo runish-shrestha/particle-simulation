@@ -44,9 +44,9 @@ double Particle_kinetic_energy(const Particle *particle) {
   return kinetic_energy;
 }
 
-double Particle_momentum(const Particle *particle) {
+Vec2 Particle_momentum(const Particle *particle) {
 
-  double momentum = particle->mass * Vec2_norm(particle->velocity);
+  Vec2 momentum = Vec2_scale(particle->velocity, particle->mass);
   return momentum;
 }
 
@@ -54,7 +54,7 @@ double Particle_momentum(const Particle *particle) {
 
 void Particle_apply_force(Particle *particle, const Vec2 force_vector) {
 
-  particle->force = force_vector;
+  particle->force = Vec2_add(particle->force, force_vector);
 }
 
 void Particle_clear_force(Particle *particle) {
