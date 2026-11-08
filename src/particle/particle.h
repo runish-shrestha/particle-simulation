@@ -21,7 +21,7 @@
  * @param velocity                      a Vec2 vector which stores the velocity of the particle
  * @param mass                          a double which stores the mass of th particle
  * @param coefficient_of_restitution    a double which stores the coefficient of restitution
- * @param radius                        a float which stores the radius of the particle
+ * @param radius                        a double which stores the radius of the particle
  * 
  * @param force                         a Vec2 vector that stores the force on the particle.
 */
@@ -30,7 +30,7 @@ typedef struct {
   Vec2 velocity;
   double mass;
   double coefficient_of_restitution;
-  float radius;
+  double radius;
   Vec2 force;
 } Particle;
 
@@ -47,7 +47,7 @@ typedef struct {
  *
  * @return particle                         particle struct with the given values
 */
-Particle Particle_create(Vec2 initial_position_vector, Vec2 initial_velocity_vector, float initial_radius);
+Particle Particle_create(Vec2 initial_position_vector, Vec2 initial_velocity_vector, double initial_radius);
 
 /**
  * @brief Sets the particle's mass
@@ -71,7 +71,7 @@ void Particle_set_coefficient_of_restitution(Particle *particle, double coeffici
  * @param particle    particle whose radius is to be changed
  * @param new_radius  new radius
 */
-void Particle_set_radius(Particle *particle, float new_radius);
+void Particle_set_radius(Particle *particle, double new_radius);
 
 // == PHYSICS MEASUREMENT
 

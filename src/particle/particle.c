@@ -5,7 +5,7 @@
 
 Particle Particle_create(const Vec2 initial_position_vector,
                          const Vec2 initial_velocity_vector,
-                         const float initial_radius) {
+                         const double initial_radius) {
 
   Particle particle = {
       .position = initial_position_vector,
@@ -29,7 +29,7 @@ void Particle_set_coefficient_of_restitution(
   particle->coefficient_of_restitution = coefficient_of_restitution;
 }
 
-void Particle_set_radius(Particle *particle, const float new_radius) {
+void Particle_set_radius(Particle *particle, const double new_radius) {
 
   particle->radius = new_radius;
 }

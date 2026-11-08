@@ -54,7 +54,7 @@ void Particle_draw(const Particle *particle,
   Vector2 position = Vector2_cast(particle->position);
   Color particle_color = Fade(render_obj->fill_color, render_obj->opacity);
   DrawCircleV(position, particle->radius, particle_color);
-  DrawCircleLinesV(position, particle->radius * 0.05f,
+  DrawCircleLinesV(position, particle->radius,
                    render_obj->outline_color);
 }
 
