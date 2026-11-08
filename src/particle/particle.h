@@ -96,7 +96,7 @@ Vec2 Particle_momentum(const Particle *particle);
 // == PHYSICS UPDATES ==
 
 /**
- * @breif Applies a force to the particle
+ * @brief Applies a force to the particle
  *
  * @param particle        the particle on which the force is applied
  * @param force_vector    the force vector acting on the particle 

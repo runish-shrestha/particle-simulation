@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-const int HEIGHT = 1080;
-const int WIDTH = 1920;
-const int FPS = 60;
+static const int HEIGHT = 1080;
+static const int WIDTH = 1920;
+static const int FPS = 60;
 
 double rand_unit(void) { return rand() / (RAND_MAX + 1.0); }
 
@@ -20,6 +20,7 @@ Color rand_color(void) {
       .r = rand_range(0, 255),
       .g = rand_range(0, 255),
       .b = rand_range(0, 255),
+      .a = 255
   };
 
   return random_color;
@@ -61,16 +62,22 @@ Particle_Render_Obj *particle_render_objs_create(size_t num_render_objs) {
 }
 
 int main(void) {
+
   srand(time(0));
 
   InitWindow(WIDTH, HEIGHT, "window");
   SetTargetFPS(FPS);
 
-  size_t particle_count = 10000;
+  size_t particle_count = 100;
   Particle *particles = particles_create(particle_count);
   Particle_Render_Obj *render_objs = particle_render_objs_create(particle_count);
 
   run_simulation(particles, render_objs, particle_count, 0.5f / FPS);
+
+  free(particles);
+  free(render_objs);
+
+  CloseWindow();
 
   return EXIT_SUCCESS;
 }

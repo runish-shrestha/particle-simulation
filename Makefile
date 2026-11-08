@@ -1,6 +1,6 @@
 CC 			:= clang
 BUILD		:= build
-TARGET 	:= $(BUILD)/app
+TARGET 	:= $(BUILD)/particle-simulation
 
 CFLAGS 	:= -std=c23 -Wall -Werror -g -Isrc\
 					 -MMD -MP\
@@ -8,6 +8,8 @@ CFLAGS 	:= -std=c23 -Wall -Werror -g -Isrc\
 LDLIBS 	:= $(shell pkg-config --libs raylib) -lm
 
 SRCS := $(shell find src -name '*.c')
+TEST_SRCS := $(shell find test -name '*.c')
+
 OBJS := $(SRCS:src/%.c=$(BUILD)/%.o)
 DEPS := $(OBJS:.o=.d)
 
