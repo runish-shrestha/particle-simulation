@@ -2,4 +2,5 @@ CompileFlags:
   Add: [-xc-header, 
         -std=c23,
         -I/home/runishs/Projects/C/particle-simulation/src/,
+        -I/home/runishs/Projects/C/particle-simulation/tests/,
        ]

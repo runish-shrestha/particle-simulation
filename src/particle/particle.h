@@ -12,7 +12,6 @@
 #define PARTICLE_H
 
 #include "vector/vec.h" 
-#include <stdbool.h>
 
 /** 
  * @brief Represents a 2D Particle. 
