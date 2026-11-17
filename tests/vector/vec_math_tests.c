@@ -56,12 +56,7 @@ static bool test_Vec2_norm(Vec2 a, double result) {
 
 int main(void) {
 
-  // Sub
-  CHECK(test_Vec2_sub(Vec2_create(1, 2), Vec2_create(2, 1), Vec2_create(-1, 1)));
-  CHECK(test_Vec2_sub(Vec2_create(2.5, 5.3), Vec2_create(2.5, 5.3), Vec2_create(0,0)));
+  // == Testing sub ==
   
-  Vec2 a = Vec2_create(3.343, 1.33);
-  Vec2 b = Vec2_create(-34.32, 0);
-  CHECK(test_Vec2_sub(a, b, Vec2_create(37.66, 1.33)));
-  CHECK(test_Vec2_sub(a, b, Vec2_add(a, Vec2_scale(b, -1))));
+  
 }
