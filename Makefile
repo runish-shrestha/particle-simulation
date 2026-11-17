@@ -1,18 +1,20 @@
-CC     := clang
+CC     := clang	
 BUILD  := build
-TARGET := $(BUILD)/app
+TARGET := $(BUILD)/app 
+
+# == Compiler Flags ==
 
 BASE_CFLAGS   := -std=c23 -Wall -Werror -g -Isrc -MMD -MP
-RAYLIB_CFLAGS := $(shell pkg-config --cflags raylib)
+RAYLIB_CFLAGS := $(shell pkg-config --cflags raylib) 
 RAYLIB_LDLIBS := $(shell pkg-config --libs raylib)
 
 CFLAGS := $(BASE_CFLAGS) $(RAYLIB_CFLAGS)
-LDLIBS := $(RAYLIB_LDLIBS) -lm
+LDLIBS := $(RAYLIB_LDLIBS) -lm 
 
 # == App ==
 
-SRCS := $(shell find src -name '*.c')
-OBJS := $(SRCS:src/%.c=$(BUILD)/%.o)
+SRCS := $(shell find src -name '*.c') 
+OBJS := $(SRCS:src/%.c=$(BUILD)/%.o) 
 
 # == Tests ==
 
